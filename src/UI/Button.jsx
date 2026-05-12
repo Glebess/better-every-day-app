@@ -1,12 +1,13 @@
-export default Button = (props) => {
-	const { text, onClick, className, disabled = false } = props
+const Button = (props) => {
+	const { children, onClick, className, disabled = false } = props
 	return (
 		<button
 			onClick={onClick}
 			className={className}
 			disabled={disabled}
 		>
-			{text}
+			{children}
 		</button>
 	)
 }
+export default Button

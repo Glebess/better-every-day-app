@@ -1,5 +1,81 @@
 .header {
-	background-color: rgb(0, 187, 187);
 	min-width: 200px;
-	width: 200px;
+	width: 100px;
+	height: 100%;
+	position: fixed;
+}
+
+.div_button_list_container {
+	padding-top: 20px;
+	padding-left: 20px;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+	box-sizing: border-box;
+}
+.actions_panel {
+	display: flex;
+	flex-direction: column;
+	gap: 2.5px;
+}
+.actions_panel button {
+	display: flex;
+	align-items: center;
+	gap: 7.5px;
+	height: 35px;
+	display: flex;
+	border-radius: 10px;
+	border: 0;
+	background-color: transparent;
+	padding: 0;
+	padding-left: 5px;
+	flex-shrink: 1;
+	transition: 0.3s ease;
+	will-change: transform;
+
+	&:hover {
+		cursor: pointer;
+		background-color: rgba(28, 14, 137, 0.1);
+		transform: scale(1.02);
+		box-shadow: 0 1px 8px rgb(2, 0, 12);
+		transition: 0.3s ease;
+	}
+}
+.actions_panel svg {
+	width: 20px;
+	height: 20px;
+	color: #1c0e89;
+}
+.actions_panel p {
+	color: #1c0e89;
+	font-size: 13px;
+	font-weight: 600;
+	text-align: center;
+	will-change: transform;
+}
+.user_panel {
+	display: flex;
+	gap: 7.5px;
+	margin-top: auto;
+	flex-shrink: 0;
+	padding-bottom: 10px;
+}
+.user_panel button {
+	border: 0;
+	background-color: transparent;
+	padding: 0;
+	transition: 0.3s ease;
+	will-change: transform;
+	border-radius: 10px;
+	&:hover {
+		cursor: pointer;
+		transform: scale(1.05);
+		transition: 0.3s ease;
+	}
+}
+.user_panel svg {
+	color: #1c0e89;
+	width: 30px;
+	height: 30px;
 }
