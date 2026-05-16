@@ -1,4 +1,8 @@
 const HabitsPage = () => {
-	return <div>1</div>
+	return (
+		<div>
+			<p>Habits</p>
+		</div>
+	)
 }
 export default HabitsPage
