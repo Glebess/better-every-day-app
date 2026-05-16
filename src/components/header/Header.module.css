@@ -72,11 +72,14 @@
 
 	&:hover {
 		cursor: pointer;
-		background-color: rgba(28, 14, 137, 0.1);
+		background-color: #1c0e891a;
 		transform: scale(1.02);
-		box-shadow: 0 1px 8px rgb(2, 0, 12);
+		box-shadow: 0 1px 8px #02000c;
 		transition: 0.3s ease;
 	}
+}
+.actions_panel button.active {
+	background-color: #1c0e891a;
 }
 .actions_panel svg {
 	width: 20px;

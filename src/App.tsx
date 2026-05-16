@@ -1,10 +1,10 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import Header from './components/Header/Header'
 import CalendarPage from './pages/CalendarPage/CalendarPage'
 import FinancePage from './pages/FinancePage/FinancePage'
 import HabitsPage from './pages/HabitsPage/HabitsPage'
 import HealthPage from './pages/HealthPage/HealthPage'
-import TargetPage from './pages/TargetsPage/TargetsPage'
+import TargetsPage from './pages/TargetsPage/TargetsPage'
 import TodayPages from './pages/TodayPages/TodayPages'
 const App = () => {
 	return (
@@ -15,7 +15,12 @@ const App = () => {
 					<Routes>
 						<Route
 							path='/'
-							element={<TodayPages />}
+							element={
+								<Navigate
+									to='/today'
+									replace
+								/>
+							}
 						/>
 						<Route
 							path='/today'
@@ -28,8 +33,8 @@ const App = () => {
 						></Route>
 
 						<Route
-							path='/targetPage'
-							element={<TargetPage />}
+							path='/targets'
+							element={<TargetsPage />}
 						></Route>
 
 						<Route

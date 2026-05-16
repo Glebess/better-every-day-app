@@ -7,40 +7,40 @@ import {
 	Wallet,
 } from 'lucide-react'
 
+import { useLocation, useNavigate } from 'react-router-dom'
 import Button from '../../UI/Button'
 import styles from './Header.module.css'
 
 const HeaderButtonList = () => {
+	const navigate = useNavigate()
+	const location = useLocation()
+
+	// Функция проверки активной страницы
+	const IsActive = (path) => location.pathname === path
+
+	// Данные для навигации
+	const navItem = [
+		{ path: '/today', icon: Sun, label: 'Сегодня' },
+		{ path: '/calendar', icon: CalendarDays, label: 'Календарь' },
+		{ path: '/targets', icon: Trophy, label: 'Цели' },
+		{ path: '/habits', icon: CircleCheckBig, label: 'Привычки' },
+		{ path: '/finance', icon: Wallet, label: 'Финансы' },
+		{ path: '/health', icon: HeartPulse, label: 'Мои параметры' },
+	]
+
 	return (
 		<div className={styles.div_button_list_container}>
 			<div className={styles.actions_panel}>
-				<Button>
-					<Sun />
-					<p>Сегодня</p>
-				</Button>
-				<Button>
-					<CalendarDays />
-					<p>Календарь</p>
-				</Button>
-
-				<Button>
-					<Trophy />
-					<p>Цели</p>
-				</Button>
-
-				<Button>
-					<CircleCheckBig />
-					<p>Привычки</p>
-				</Button>
-
-				<Button>
-					<Wallet />
-					<p>Финансы</p>
-				</Button>
-				<Button>
-					<HeartPulse />
-					<p>Мои параметры</p>
-				</Button>
+				{navItem.map(({ path, icon: Icon, label }) => (
+					<Button
+						key={path}
+						onClick={() => navigate(path)}
+						className={IsActive(path) ? styles.active : ''}
+					>
+						<Icon />
+						<p>{label}</p>
+					</Button>
+				))}
 			</div>
 
 			<div className={styles.user_panel}>
