@@ -1,0 +1,14 @@
+:root {
+	--main-blue: #217ac750;
+	--main-blue1: #1c0e89;
+}
+* {
+	font-family: 'Open Sans', sans-serif;
+}
+.div_container {
+	display: flex;
+	gap: 10px;
+}
+.div_main {
+	width: 100%;
+}

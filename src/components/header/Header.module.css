@@ -1,13 +1,15 @@
 .header {
-	min-width: 200px;
-	width: 100px;
+	min-width: 225px;
 	height: 100vh;
 	position: sticky;
+	background-color: var(--main-blue);
+	padding-right: 20px;
+	padding-left: 20px;
+	border-radius: 5px;
 }
 
 .div_button_list_container {
 	padding-top: 20px;
-	padding-left: 20px;
 	gap: 5%;
 	display: flex;
 	flex-direction: column;
@@ -15,41 +17,6 @@
 	width: 100%;
 	box-sizing: border-box;
 }
-.time_panel {
-	display: flex;
-	flex-direction: column;
-	border-radius: 10px;
-	border: 1px solid #1c0e89;
-	background-color: white;
-	justify-content: center;
-	height: 90px;
-	width: 100%;
-	color: #1c0e89;
-	box-sizing: border-box;
-}
-.time_panel div {
-	display: flex;
-	margin-bottom: auto;
-	gap: 10px;
-	padding-top: 5px;
-	padding-left: 5px;
-	padding-right: 5px;
-	height: 25px;
-	align-items: center;
-	justify-content: center;
-}
-.time_panel span {
-	font-size: 20px;
-	text-align: center;
-}
-.time_panel p {
-	margin: 0;
-	font-size: 50px;
-	font-weight: 600;
-	text-align: center;
-	padding-bottom: 10px;
-}
-
 .actions_panel {
 	display: flex;
 	flex-direction: column;
@@ -84,10 +51,10 @@
 .actions_panel svg {
 	width: 20px;
 	height: 20px;
-	color: #1c0e89;
+	color: var(--main-blue1);
 }
 .actions_panel p {
-	color: #1c0e89;
+	color: var(--main-blue1);
 	font-size: 13px;
 	font-weight: 600;
 	text-align: center;
@@ -113,8 +80,9 @@
 		transition: 0.3s ease;
 	}
 }
+
 .user_panel svg {
-	color: #1c0e89;
+	color: var(--main-blue1);
 	width: 30px;
 	height: 30px;
 }

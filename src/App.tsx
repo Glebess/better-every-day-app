@@ -1,4 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import styles from './App.module.css'
 import Header from './components/Header/Header'
 import CalendarPage from './pages/CalendarPage/CalendarPage'
 import FinancePage from './pages/FinancePage/FinancePage'
@@ -9,9 +10,9 @@ import TodayPages from './pages/TodayPages/TodayPages'
 const App = () => {
 	return (
 		<BrowserRouter>
-			<div style={{ display: 'flex' }}>
+			<div className={styles.div_container}>
 				<Header />
-				<main>
+				<main className={styles.div_main}>
 					<Routes>
 						<Route
 							path='/'
