@@ -10,16 +10,9 @@ import {
 import Button from '..//..//UI/Button'
 import styles from './Header.module.css'
 
-const HeaderButtonList = (props) => {
-	const { timeNow } = props
+const HeaderButtonList = () => {
 	return (
 		<div className={styles.div_button_list_container}>
-			<div className={styles.time_panel}>
-				<div>
-					<span>{timeNow.dayName}</span>
-				</div>
-				<p>{timeNow.day}</p>
-			</div>
 			<div className={styles.actions_panel}>
 				<Button>
 					<Sun />

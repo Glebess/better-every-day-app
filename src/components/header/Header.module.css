@@ -1,8 +1,8 @@
 .header {
 	min-width: 200px;
 	width: 100px;
-	height: 100%;
-	position: fixed;
+	height: 100vh;
+	position: sticky;
 }
 
 .div_button_list_container {
