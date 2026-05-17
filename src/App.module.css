@@ -1,6 +1,7 @@
 :root {
-	--main-blue: #217ac750;
-	--main-blue1: #1c0e89;
+	--main-blue: #0887f71d;
+	--main-blue1: #383173e8;
+	--main-blue2: #1c0e891a;
 }
 * {
 	font-family: 'Open Sans', sans-serif;
