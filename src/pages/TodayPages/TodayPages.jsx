@@ -1,6 +1,6 @@
+import HabitsWidget from '../../modules/HabitsWidget/HabitsWidget'
 import { formatDate, getToday } from './../../utils/timeUtils'
 import styles from './TodayPages.module.css'
-
 const TodayPages = () => {
 	const today = formatDate(getToday())
 	return (
@@ -9,6 +9,9 @@ const TodayPages = () => {
 				<p>Сегодня, {today}</p>
 			</div>
 			<div className={styles.div_line}></div>
+			<div className={styles.div_widget}>
+				<HabitsWidget />
+			</div>
 		</div>
 	)
 }
