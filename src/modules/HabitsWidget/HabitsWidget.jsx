@@ -8,9 +8,6 @@ const HabitsWidget = () => {
 				<div className={styles.div_habits_top_panel_title}>
 					<CircleCheckBig size={'25px'} />
 					<p>Привычки</p>
-					<div className={styles.div_completed_task}>
-						<span>1</span>
-					</div>
 				</div>
 				<div className={styles.div_habits_top_panel_action}>
 					<Button>
@@ -23,7 +20,23 @@ const HabitsWidget = () => {
 							<path d='M10 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM10 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM11.5 15.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z' />
 						</svg>
 					</Button>
-					<Button></Button>
+					<Button className={styles.button_add_habits}>Добавить</Button>
+				</div>
+			</div>
+			<div className={styles.all_habit_container}>
+				<div className={styles.item_habit}>
+					<div className={styles.habit_icon}>❄️</div>
+					<p className={styles.habit_title}>Пить воду</p>
+				</div>
+
+				<div className={styles.item_habit}>
+					<div className={styles.habit_icon}>⚡</div>
+					<p className={styles.habit_title}>Ам ам ам</p>
+				</div>
+
+				<div className={styles.item_habit}>
+					<div className={styles.habit_icon}>🚍</div>
+					<p className={styles.habit_title}>Много кушат221212ь21212212121212</p>
 				</div>
 			</div>
 		</div>
