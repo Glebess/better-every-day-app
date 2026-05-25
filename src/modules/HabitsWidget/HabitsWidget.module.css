@@ -6,6 +6,7 @@
 	height: 150px;
 	border-radius: var(--radius-1);
 	box-shadow: 0 1px 10px var(--gray);
+	padding-bottom: 5px;
 }
 .div_habits_top_panel {
 	display: flex;
@@ -87,10 +88,15 @@
 .item_habit {
 	display: flex;
 	flex-direction: column;
+	padding-top: var(--padding);
 	width: 80px;
 	align-items: center;
+	position: relative;
+	border-radius: var(--radius-1);
 }
-
+.item_habit:hover {
+	background-color: #c0bfbf47;
+}
 .habit_icon {
 	display: flex;
 	background-color: greenyellow;
@@ -116,4 +122,19 @@
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 	text-align: center;
+}
+.habit_settings {
+	position: absolute;
+	right: 0;
+	top: 0;
+	margin: 0;
+	width: 20px;
+	height: 20px;
+	border-radius: var(--radius-1);
+	transition: 0.3s ease;
+}
+.habit_settings:hover {
+	background-color: var(--gray1);
+	cursor: pointer;
+	transition: 0.3s ease;
 }

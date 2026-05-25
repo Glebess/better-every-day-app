@@ -1,0 +1,45 @@
+.checkbox_task {
+	display: inline-flex;
+	align-items: center;
+	cursor: pointer;
+	user-select: none;
+	margin-right: auto;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
+.checkmark {
+	width: 15px;
+	height: 15px;
+	border: 2px solid #ccc;
+	border-radius: var(--main-radius);
+	background: white;
+	transition: all 0.3s ease;
+	position: relative;
+}
+
+.checkbox_task input:checked + .checkmark {
+	background: #4c9aff;
+	border-color: #4c9aff;
+}
+
+/* Галочка */
+.checkbox_task input:checked + .checkmark::after {
+	content: '✓';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.checkbox_task:hover .checkmark {
+	border-color: #4c9aff;
+}
+
+.checkbox_task input:focus + .checkmark {
+	box-shadow: 0 0 0 2px rgba(76, 154, 255, 0.3);
+}
