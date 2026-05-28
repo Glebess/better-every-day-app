@@ -13,7 +13,10 @@
 	backdrop-filter: blur(8px);
 	height: 145px;
 	border-radius: var(--main-radius);
+	user-select: none;
+	animation: containerAppear 0.3s ease;
 }
+
 .button_settings {
 	padding-top: var(--padding);
 	padding-left: var(--padding);
@@ -22,31 +25,64 @@
 	height: 30px !important;
 	display: flex;
 	background-color: transparent;
-	transition: 0.3s ease;
+
+	/* Анимация для каждой кнопки */
+	opacity: 0;
+	transform: translateY(-20px);
+	animation: buttonSlideIn 0.3s ease forwards;
+	animation-delay: var(--delay, 0s);
 }
+
 .button_settings:hover {
 	background-color: var(--main-blue);
 	cursor: pointer;
 	transition: 0.3s ease;
 }
+
 .button_settings:last-child:hover {
 	background-color: rgba(255, 0, 0, 0.246);
 	cursor: pointer;
 	transition: 0.3s ease;
 }
+
 .button_settings p {
 	font-size: 12px;
 	margin: 0;
 }
+
 .button_settings svg {
 	width: 20px !important;
 	height: 20px !important;
 	pointer-events: none;
 	margin-left: auto;
 }
+
 .button_settings:last-child p {
 	color: red;
 }
+
 .button_settings:last-child svg {
 	color: red;
+}
+
+@keyframes containerAppear {
+	from {
+		opacity: 0;
+		transform: scale(0.95);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes buttonSlideIn {
+	from {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
