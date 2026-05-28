@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Button from '../../UI/Button'
 import CustomCheckBox from '../../UI/CustomCheckBox'
 import DropDownSettings from '../../components/DropDownSettings/DropDownSettings'
+
 import checkboxStyles from './CheckBox.module.css'
 import styles from './HabitsWidget.module.css'
 const HabitsWidget = () => {
