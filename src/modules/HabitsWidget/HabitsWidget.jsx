@@ -2,7 +2,7 @@ import { CircleCheckBig } from 'lucide-react'
 import { useState } from 'react'
 import Button from '../../UI/Button'
 import CustomCheckBox from '../../UI/CustomCheckBox'
-import SettingsHabitsWidget from '..//HabitsWidget/SettingsHabitsWidget/SettingsHabitsWidget'
+import DropDownSettings from '../../components/DropDownSettings/DropDownSettings'
 import checkboxStyles from './CheckBox.module.css'
 import styles from './HabitsWidget.module.css'
 const HabitsWidget = () => {
@@ -32,7 +32,7 @@ const HabitsWidget = () => {
 								clipRule='evenodd'
 							/>
 						</svg>
-						{isSettingsOpen ? <SettingsHabitsWidget /> : null}
+						{isSettingsOpen ? <DropDownSettings /> : null}
 					</div>
 					<Button className={styles.button_add_habits}>Добавить</Button>
 				</div>
