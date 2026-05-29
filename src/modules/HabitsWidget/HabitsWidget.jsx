@@ -1,14 +1,18 @@
-import { CircleCheckBig } from 'lucide-react'
+import { CircleCheckBig, Ellipsis } from 'lucide-react'
 import { useState } from 'react'
 import Button from '../../UI/Button'
 import CustomCheckBox from '../../UI/CustomCheckBox'
 import DropDownSettings from '../../components/DropDownSettings/DropDownSettings'
-
+import {
+	habitSettingsButton,
+	habitsWidgetSettingsButtons,
+} from '..//..//components/DropDownSettings/ButtonsConfig/buttonsConfig'
 import checkboxStyles from './CheckBox.module.css'
 import styles from './HabitsWidget.module.css'
 const HabitsWidget = () => {
 	const [isSettingsOpen, setIsSettingsOpen] = useState(false)
 	const [isHabitHover, setIsHabitHover] = useState(true)
+	const [isHabitSettingsOpen, setIsHabitSettingsOpen] = useState(true)
 	return (
 		<div className={styles.div_habit_container}>
 			<div className={styles.div_habits_top_panel}>
@@ -21,19 +25,10 @@ const HabitsWidget = () => {
 						className={styles.div_more}
 						onClick={() => setIsSettingsOpen(!isSettingsOpen)}
 					>
-						<svg
-							xmlns='http://www.w3.org/2000/svg'
-							viewBox='0 0 24 24'
-							fill='currentColor'
-							className='size-6'
-						>
-							<path
-								fillRule='evenodd'
-								d='M4.5 12a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm6 0a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm6 0a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z'
-								clipRule='evenodd'
-							/>
-						</svg>
-						{isSettingsOpen ? <DropDownSettings /> : null}
+						<Ellipsis />
+						{isSettingsOpen && (
+							<DropDownSettings buttons={habitsWidgetSettingsButtons} />
+						)}
 					</div>
 					<Button className={styles.button_add_habits}>Добавить</Button>
 				</div>
@@ -45,19 +40,14 @@ const HabitsWidget = () => {
 					onMouseLeave={() => setIsHabitHover(false)}
 				>
 					{isHabitHover && (
-						<span className={styles.habit_settings}>
-							<svg
-								xmlns='http://www.w3.org/2000/svg'
-								viewBox='0 0 24 24'
-								fill='currentColor'
-								className='size-6'
-							>
-								<path
-									fillRule='evenodd'
-									d='M4.5 12a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm6 0a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm6 0a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z'
-									clipRule='evenodd'
-								/>
-							</svg>
+						<span
+							className={styles.habit_settings}
+							onClick={() => setIsHabitSettingsOpen(!isHabitSettingsOpen)}
+						>
+							<Ellipsis />
+							{isHabitSettingsOpen && (
+								<DropDownSettings buttons={habitSettingsButton} />
+							)}
 						</span>
 					)}
 					<div className={styles.habit_icon}>❄️</div>

@@ -26,6 +26,8 @@
 	display: flex;
 	background-color: transparent;
 	transition: all 0.3s ease;
+	border: 0;
+	border-radius: 10px;
 
 	/* Анимация для каждой кнопки */
 	opacity: 0;
