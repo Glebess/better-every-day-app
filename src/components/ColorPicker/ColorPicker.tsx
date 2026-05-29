@@ -1,9 +1,12 @@
+import { CircleX } from 'lucide-react'
 import React, { useState } from 'react'
 import { ChromePicker } from 'react-color'
 import styles from './ColorPicker.module.css'
-const ColorPicker: React.FC = () => {
-	const [color, setColor] = useState('#ffffff')
 
+const ColorPicker: React.FC = (props) => {
+	const { isOpen } = props
+	const [color, setColor] = useState('#ffffff')
+	const [isChromePickerOpen, setIsChromePickerOpen] = useState(false)
 	const presetColors = [
 		'#ff0000',
 		'#dc143c',
@@ -42,27 +45,44 @@ const ColorPicker: React.FC = () => {
 		'#666666',
 		'#999999',
 		'#cccccc',
-		'#ffffff',
 	]
+
 	return (
-		<>
-			<div className={styles.div_container}>
-				{presetColors.map((presetColor, index) => (
-					<div className={styles.div_color_select}>
-						<div
-							className={styles.div_color_item}
-							style={{ backgroundColor: presetColor }}
-							key={index}
-							onClick={() => setColor(presetColor)}
+		<div className={styles.div_container}>
+			{presetColors.map((presetColor, index) => (
+				<div
+					className={styles.div_color_select}
+					key={index}
+				>
+					<div
+						className={styles.div_color_item}
+						style={{ backgroundColor: presetColor }}
+						onClick={() => setColor(presetColor)}
+					/>
+				</div>
+			))}
+			<div
+				className={styles.div_color_select}
+				style={{ position: 'relative' }}
+			>
+				<div
+					className={styles.gradient_div}
+					onClick={() => setIsChromePickerOpen(!isChromePickerOpen)}
+				/>
+				{isChromePickerOpen && (
+					<div className={styles.picker_wrapper}>
+						<ChromePicker
+							color={color}
+							onChange={(newColor) => setColor(newColor.hex)}
 						/>
 					</div>
-				))}
+				)}
 			</div>
-			<ChromePicker
-				color={color}
-				onChange={(newColor) => setColor(newColor.hex)}
-			/>
-		</>
+			<div className={styles.div_color_select}>
+				<CircleX />
+			</div>
+		</div>
 	)
 }
+
 export default ColorPicker

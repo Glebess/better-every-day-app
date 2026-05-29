@@ -8,16 +8,35 @@
 	justify-content: center;
 	border-radius: 10px;
 	padding: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+
 .div_color_select {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-wrap: wrap;
 }
+
 .div_color_item {
 	width: 25px;
 	height: 25px;
 	border-radius: 50%;
 	cursor: pointer;
+}
+
+.gradient_div {
+	background: conic-gradient(red, yellow, lime, aqua, blue, magenta, red);
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.picker_wrapper {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	margin-top: 10px;
+	z-index: 1000;
 }
